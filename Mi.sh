@@ -5,7 +5,7 @@ echo "[+] Atualizando sistema..."
 sudo apt update && sudo apt upgrade -y
 
 echo "[+] Instalando dependências..."
-sudo apt install -y git curl wget unzip zip bc bison flex build-essential \
+sudo apt install -y curl wget unzip zip bc bison flex build-essential \
 libssl-dev libncurses5-dev libelf-dev clang ccache libtool libzstd-dev \
 python3 kmod gcc-aarch64-linux-gnu
 
