@@ -1,2 +1,0 @@
-# Lineage-os
-Poop
