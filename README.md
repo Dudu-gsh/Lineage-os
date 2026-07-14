@@ -21,5 +21,6 @@ Por favor rode de uma vez o lineageos23pt.sh rodando com bash,porque pode dar er
 
 Eu criei em inglês e português 
 
-Eu ainda nao testei no linux. Eu criei isso no tedio
+Eu ainda nao testei no linux,pois eu criei isso no Android,ai pode dar ruim. Eu criei isso no tedio
 
+[Lincença](LINCENSE)
