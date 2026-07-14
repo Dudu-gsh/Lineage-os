@@ -1,0 +1,74 @@
+#!/bin/bash
+set -euo pipefail
+sudo apt update -y 
+sudo apt upgrade -y 
+sudo apt install -y bc bison build-essential ccache curl flex g++-multilib gcc-multilib git git-lfs gnupg gperf imagemagick protobuf-compiler python3-protobuf lib32readline-dev lib32z1-dev libdw-dev libelf-dev libgnutls28-dev lz4 libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc xxd zip zlib1g-dev python-is-python3
+mkdir -p ~/bin
+mkdir -p ~/android/lineage
+
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+clear
+cat <<EOF >> ~/.profile
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache 
+EOF
+source ~/.profile
+read -rp "Me fale seu email do git (E pra o repo pra clonar repositorios)" EMAIL 
+read -rp "E nome (Pode botar oq q vc quiser)" NAME 
+clear
+git config --global user.email "$EMAIL"
+git config --global user.name "$NAME"
+git lfs install
+git config --global trailer.changeid.key "Change-Id"
+
+ccache -M 30G
+ccache -o compression=true
+
+cd ~/android/lineage
+repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs --no-clone-bundle
+repo sync -c -j4
+clear
+echo "Nos passos de fazer build,vai ta escrito em uma parte breakfast NOME DO SEU DISPOSITIVO"
+echo "Exemplo:rosemary"
+read -rp "Oq que tava la escrito: " CODENOME
+source build/envsetup.sh
+clear
+echo "Agora isso vai demorar,entao tire um soneca,toma cafe ou algo"
+sleep 3
+breakfast "$CODENOME"
+funcao() {
+  echo "Por favor,baixe o seu .zip do instalador,porque precisa extrair coisas do .zip"
+echo "Escreva onde o .zip ta,exemplo:$HOME/Downloads/lineage.zip"
+read -rp "Escreva aqui:" ZIP 
+}
+funcao
+
+if [[ ! -f "$ZIP" ]]; then
+echo "Arquivo nao encontrado!"
+funcao
+fi 
+funcao2() {
+  echo "Qual é a pasta que debaixo da parte (Extract proprietary blobs)"
+read -rp "Escreva aqui" PASTA
+}
+funcao2
+if [[ ! -d $PASTA ]]; then
+echo "Pasta errada!"
+funcao2
+fi
+cd "$PASTA"
+if [[ -f "./extract-files.sh" ]]; then
+    ./extract-files.sh
+elif [[ -f ./extract-files.py ]]; then
+   ./extract-files.py
+  else
+  echo "Arquivo importante nao encontrado!!!"
+  exit 1
+fi
+croot
+brunch "$CODENOME"
