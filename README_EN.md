@@ -1,4 +1,7 @@
 <h1 align="center">Lineage os 23 auto builder script</h1>
+
+[Português](README.md) | [English](README_EN.md)
+
 Hello, welcome to my repository! This repository contains a LineageOS 23 builder, and I plan to add support for other LineageOS versions and other languages the future.
 
 What does this do?
