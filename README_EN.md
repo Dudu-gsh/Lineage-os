@@ -13,7 +13,6 @@ git clone https://github.com/Dudu-gsh/Lineage-os.git
 
 Plese do not run the other scripts with bash,it will give erros
 
-I am still working on the English tranlation.
-I'll post an update once all the translated scripts are finished!
+Theres English and portuguese
 
-I created this on boredon (i dont know if it is this way is to write), i dont tested the script (i dont have proper hardware)
+I created this on boredom (i dont know if it is this way is to write), i dont tested the script (i dont have proper hardware)
