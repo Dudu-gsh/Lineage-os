@@ -10,7 +10,7 @@ Como baixar o script
 
 ```bash
 git clone https://github.com/Dudu-gsh/Lineage-os.git
-./menu-script
+./menu.sh
 ```
 Por favor rode de uma vez o lineageos23pt.sh rodando com bash,porque pode dar erros numa parte do script,rode ./lineageos23pt.sh
 
