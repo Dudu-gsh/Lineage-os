@@ -1,8 +1,17 @@
 #!/bin/bash
+CORES="$(( $(nproc) - 2 ))"
 set -euo pipefail
 sudo apt update -y 
 sudo apt upgrade -y 
-sudo apt install -y bc bison build-essential ccache curl flex g++-multilib gcc-multilib git git-lfs gnupg gperf imagemagick protobuf-compiler python3-protobuf lib32readline-dev lib32z1-dev libdw-dev libelf-dev libgnutls28-dev lz4 libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc xxd zip zlib1g-dev python-is-python3
+sudo apt install -y bc bison build-essential \
+ccache curl flex g++-multilib gcc-multilib git \
+git-lfs gnupg gperf imagemagick protobuf-compiler \
+python3-protobuf lib32readline-dev \
+lib32z1-dev libdw-dev libelf-dev libgnutls-dev \
+lz4 libsdl1.2-dev libssl-dev libxml2 \
+libxml2-utils lzop pngcrush rsync schedtool \
+squashfs-tools xsltproc xxd zip zlib1g-dev \
+python-is-python3
 mkdir -p ~/bin
 mkdir -p ~/android/lineage
 
@@ -31,7 +40,7 @@ ccache -o compression=true
 
 cd ~/android/lineage
 repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs --no-clone-bundle
-repo sync -c -j4
+repo sync -c -j"$CORES"
 clear
 echo "Nos passos de fazer build,vai ta escrito em uma parte breakfast NOME DO SEU DISPOSITIVO"
 echo "Exemplo:rosemary"
@@ -48,19 +57,19 @@ read -rp "Escreva aqui:" ZIP
 }
 funcao
 
-if [[ ! -f "$ZIP" ]]; then
+while [[ ! -f "$ZIP" ]]; do 
 echo "Arquivo nao encontrado!"
 funcao
-fi 
+done
 funcao2() {
   echo "Qual é a pasta que debaixo da parte (Extract proprietary blobs)"
 read -rp "Escreva aqui" PASTA
 }
 funcao2
-if [[ ! -d $PASTA ]]; then
+while [[ ! -d $PASTA ]]; do
 echo "Pasta errada!"
 funcao2
-fi
+done
 cd "$PASTA"
 if [[ -f "./extract-files.sh" ]]; then
     ./extract-files.sh
