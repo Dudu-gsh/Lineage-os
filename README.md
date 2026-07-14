@@ -1,6 +1,6 @@
 <h1 align="center">Lineage os 23 auto builder script</h1>
 
-[English](README_EN.md) | Português
+[Português](README.md) | [English](README_EN.md)
 
 Olá,bem vindo ao meu repositório,esse repositório contem um builder de lineage os 23,e eu vou adicionar outras versões
 
