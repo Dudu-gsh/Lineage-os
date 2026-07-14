@@ -21,6 +21,7 @@
 #  SOFTWARE.
 
 clear
+
 echo "Ola e bem vindo ao meu menu"
 sleep 1
 echo "Hello and welcome to my menu"
@@ -28,7 +29,7 @@ sleep 1
 echo "Escolha uma lingua"
 echo "Chosse one language"
 echo ""
-echo "1) English (Adding soon)"
+echo "1) English "
 echo "2) Portugues"
 echo ""
 echo "Aviso,quando for escrever,escreva pt pra portugues ou en pra ingles"
