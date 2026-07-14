@@ -2,7 +2,9 @@
 
 [Português](README.md) | [English](README_EN.md)
 
-Olá,bem vindo ao meu repositório,esse repositório contem um builder de lineage os 23,e eu vou adicionar outras versões
+Olá,bem vindo ao meu repositório,esse repositório contem um builder de lineage os 23,e eu acho que eu vou adicionar outras versões
+
+Se voce quiser que eu adicione algo,crie uma issue ou faça um fork
 
 Oq isso faz? :Esse script usa ferramentas pra fazer build de lineage os 23
 
@@ -21,6 +23,7 @@ Por favor rode de uma vez o lineageos23pt.sh rodando com bash,porque pode dar er
 
 Eu criei em inglês e português 
 
-Eu ainda nao testei no linux,pois eu criei isso no Android,ai pode dar ruim. Eu criei isso no tedio
+Eu ainda nao testei no linux,pois eu criei isso no Android,ai ele é fraco. Eu criei isso no tedio
+E porque voce nao testou no seu pc? :Pq nao tenho
 
 [Lincença](LINCENSE)
