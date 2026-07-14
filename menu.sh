@@ -18,13 +18,15 @@ read -rp "Escreva  /  Write:" lang
 
 if [[ $lang == pt ]]; then
 echo "Bem vindo ao meu lineageos 23 builder"
-$(pwd)/lineageos23pt.sh
+chmod +x $(pwd)/lineageos23pt.sh
+./lineageos23pt.sh
 echo "Agora voce tem um build do lineageos 23"
 exit 1
 
 elif [[ $lang == en ]]; then 
 echo "Welcome to my lineageos 23 builder"
-$(pwd)/lineageos23en.sh
+chmod +x lineageos23en.sh
+./lineageos23en.sh
 echo "Now you have a build of lineageos 23"
 else 
 echo "Nao entendi meu fi."
