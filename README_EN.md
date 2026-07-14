@@ -2,7 +2,10 @@
 
 [Português](README.md) | [English](README_EN.md)
 
-Hello, welcome to my repository! This repository contains a LineageOS 23 builder, and I plan to add support for other LineageOS versions and other languages the future.
+Hello, welcome to my repository! This repository contains a LineageOS 23 builder, and i think i will add way to build other versions.
+
+Its only for Lineageos 23
+If you want to add something,create a issue or make your fork
 
 What does this do?
 This script installs the required tools and dependencies to build LineageOS 23.
@@ -24,4 +27,8 @@ Plese do not run the other scripts with bash,it will give erros
 
 Theres English and portuguese
 
-I created this on boredom (i dont know if it is this way is to write), i dont tested the script (i dont have proper hardware)
+I created this on boredom, i dont tested the scripts becuse i dont have propper hardware
+
+Why:I dont have allot of money
+
+[Lincense](LINCENSE)
