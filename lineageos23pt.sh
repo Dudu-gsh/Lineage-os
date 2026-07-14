@@ -35,7 +35,7 @@ python-is-python3
 mkdir -p ~/bin
 mkdir -p ~/android/lineage
 
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+curl -fLo ~/bin/repo https://storage.googleapis.com/git-repo-downloads/repo
 chmod a+x ~/bin/repo
 clear
 cat <<EOF >> ~/.profile
@@ -43,9 +43,9 @@ cat <<EOF >> ~/.profile
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+EOF
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache 
-EOF
 source ~/.profile
 read -rp "Me fale seu email do git (E pra o repo pra clonar repositorios)" EMAIL 
 read -rp "E nome (Pode botar oq q vc quiser)" NAME 
@@ -86,7 +86,7 @@ funcao2() {
 read -rp "Escreva aqui" PASTA
 }
 funcao2
-while [[ ! -d $PASTA ]]; do
+while [[ ! -d "$PASTA" ]]; do
 echo "Pasta errada!"
 funcao2
 done
