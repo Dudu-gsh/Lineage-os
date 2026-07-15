@@ -92,9 +92,9 @@ funcao2
 done
 cd "$PASTA"
 if [[ -f "./extract-files.sh" ]]; then
-    ./extract-files.sh
+    ./extract-files.sh "$ZIP"
 elif [[ -f ./extract-files.py ]]; then
-   ./extract-files.py
+   ./extract-files.py "$ZIP"
   else
   echo "Arquivo importante nao encontrado!!!"
   exit 1
