@@ -13,7 +13,7 @@ This script installs the required tools and dependencies to build LineageOS 23.
 How to download the script
 
 ```bash
-git clone https://github.com/Dudu-gsh/Lineage-os.git
+git clone https://github.com/Dudu-gsh/Lineageos-23-auto-builder-script.git
 ./menu.sh
 ```
 
