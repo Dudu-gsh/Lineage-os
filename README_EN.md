@@ -17,10 +17,12 @@ git clone https://github.com/Dudu-gsh/Lineageos-23-auto-builder-script.git
 ./menu.sh
 ```
 
-# Recommended Requirements
-Ubuntu or Debian (based ones too,and it is necessarry)
-8GB of RAM 
-4 to 8 cores
+# Recommended Requirements  
+Ubuntu or Debian (based ones too,and it is necessarry). 
+
+8GB of RAM   
+
+4 to 8 cores. 
 #
 
 Plese do not run the other scripts with bash,it will give erros
