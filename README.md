@@ -11,7 +11,7 @@ Oq isso faz? :Esse script usa ferramentas pra fazer build de lineage os 23
 Como baixar o script
 
 ```bash
-git clone https://github.com/Dudu-gsh/Lineage-os.git
+git clone https://github.com/Dudu-gsh/Lineageos-23-auto-builder-script.git
 ./menu.sh
 ```
 # Requerimentos recomandadas
