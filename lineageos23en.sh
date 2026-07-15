@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #  MIT License
 #
 #  Copyright (c) 2026 Dudu-gsh
@@ -19,7 +18,6 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
-
 CORES=$(( $(nproc) - 2 ))
 (( CORES < 1 )) && CORES=1
 set -euo pipefail
@@ -94,9 +92,9 @@ funcao2
 done
 cd "$PASTA"
 if [[ -f "./extract-files.sh" ]]; then
-    ./extract-files.sh
+    ./extract-files.sh "$ZIP"
 elif [[ -f "./extract-files.py" ]]; then
-   ./extract-files.py
+   ./extract-files.py "$ZIP"
   else
   echo "Important file not found!"
   exit 1
