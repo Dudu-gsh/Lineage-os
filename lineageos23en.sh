@@ -20,7 +20,8 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-CORES="$(( $(nproc) - 2 ))"
+CORES=$(( $(nproc) - 2 ))
+(( CORES < 1 )) && CORES=1
 set -euo pipefail
 sudo apt update -y 
 sudo apt upgrade -y 
@@ -36,7 +37,7 @@ python-is-python3
 mkdir -p ~/bin
 mkdir -p ~/android/lineage
 
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+curl -fLo ~/bin/repo https://storage.googleapis.com/git-repo-downloads/repo
 chmod a+x ~/bin/repo
 clear
 cat <<EOF >> ~/.profile
@@ -44,9 +45,9 @@ cat <<EOF >> ~/.profile
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+EOF
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache 
-EOF
 source ~/.profile
 read -rp "Tell me your email of github,is for the repo to work" EMAIL 
 read -rp "And name,u can put anything" NAME 
@@ -87,14 +88,14 @@ funcao2() {
 read -rp "Escreva aqui" PASTA
 }
 funcao2
-while [[ ! -d $PASTA ]]; do
+while [[ ! -d "$PASTA" ]]; do
 echo "Wrong path!"
 funcao2
 done
 cd "$PASTA"
 if [[ -f "./extract-files.sh" ]]; then
     ./extract-files.sh
-elif [[ -f ./extract-files.py ]]; then
+elif [[ -f "./extract-files.py" ]]; then
    ./extract-files.py
   else
   echo "Important file not found!"
