@@ -16,7 +16,9 @@ git clone https://github.com/Dudu-gsh/Lineageos-23-auto-builder-script.git
 ```
 # Requerimentos recomandadas
 Ubuntu ou debian (Isso é obrigatório)
+
 4 a 8 GB de RAM
+
 8 cores 
 #
 Por favor rode de uma vez o lineageos23pt.sh rodando com bash,porque pode dar erros numa parte do script,rode ./lineageos23pt.sh
