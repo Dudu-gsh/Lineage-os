@@ -18,7 +18,7 @@ git clone https://github.com/Dudu-gsh/Lineageos-23-auto-builder-script.git
 ```
 
 # Recommended Requirements  
-Ubuntu or Debian latest (based ones too,and debian and ubuntu is obgatory). 
+Ubuntu or Debian latest (based ones too. I  said to use latest ubuntu or debian becuse some versions dont exist necessary packges). 
 
 8GB of RAM   
 
@@ -29,9 +29,7 @@ Plese do not run the other scripts with bash,it will give erros
 
 Theres English and portuguese
 
-I created this on boredom, i dont tested the scripts becuse i dont have propper hardware
-
-Why:I dont have allot of money
+I created this on boredom, i dont tested the scripts becuse i dont have propper hardware (I used android to create)
 
 ;D
 
