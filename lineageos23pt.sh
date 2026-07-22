@@ -32,7 +32,6 @@ clear
 # Baixa especificacoes
 echo "Agora isso vai demorar,entao tire um soneca,toma cafe ou algo"
 sleep 3
-breakfast "$CODENOME"
 }
 ask_zip() {
   echo "Por favor,baixe o seu .zip do instalador,porque precisa extrair coisas do .zip"
@@ -82,7 +81,6 @@ git config --global user.email "$EMAIL"
 git config --global user.name "$NAME"
 git lfs install
 git config --global trailer.changeid.key "Change-Id"
-
 ccache -M 30G
 ccache -o compression=true
 # Baixa ma8s coisa
@@ -92,8 +90,10 @@ repo sync -c -j"$CORES"
 clear
 ASK
 if ! breakfast "$CODENOME"; then
-    echo "Erro:Voce errpu na hora que tava digitando ou nao e surportado meu bro"
+    echo "Erro:Voce errou na hora que tava digitando ou nao e surportado meu bro"
     ASK
+else
+    breakfast "$CODENOME"
 fi
 ask_zip
 

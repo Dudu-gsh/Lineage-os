@@ -39,7 +39,6 @@ source build/envsetup.sh
 clear
 echo "This will take a while,so take a nap,take a coffe or something"
 sleep 3
-breakfast "$CODENOME"
 }
 CORES=$(( $(nproc) - 2 ))
 (( CORES < 1 )) && CORES=1
@@ -96,6 +95,8 @@ ASK
 if ! breakfast "$CODENOME"; then
     echo "Error: $CODENOME dont exist or is unsupported"
     ASK
+else
+    breakfast "$CODENOME"
 fi
 ask_zip
 
