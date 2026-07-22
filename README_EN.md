@@ -1,10 +1,10 @@
-<h1 align="center">Lineage os 23 auto builder script</h1>
+<h1 align="center">LineageOS 23 auto builder script</h1>
 
 [Português](README.md) | [English](README_EN.md)
 
 Hello, welcome to my repository! This repository contains a LineageOS 23 builder, and i think i will add way to build other versions.
 
-Its only for Lineageos 23
+Its only for LineageOS 23
 If you want to add something,create a issue or make your fork
 
 What does this do?

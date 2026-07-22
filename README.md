@@ -1,12 +1,12 @@
-<h1 align="center">Lineage os 23 auto builder script</h1>
+<h1 align="center">LineageOS 23 auto builder script</h1>
 
 [Português](README.md) | [English](README_EN.md)
 
-Olá,bem vindo ao meu repositório,esse repositório contem um builder de lineage os 23,e eu acho que eu vou adicionar outras versões
+Olá,bem vindo ao meu repositório,esse repositório contem um builder de LineageOS 23,e eu acho que eu vou adicionar outras versões
 
 Se voce quiser que eu adicione algo,crie uma issue ou faça um fork
 
-Oq isso faz? :Esse script usa ferramentas pra fazer build de lineage os 23
+Oq isso faz? :Esse script usa ferramentas pra fazer build de LineageOS 23
 
 Como baixar o script
 
