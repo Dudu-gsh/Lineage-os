@@ -18,6 +18,28 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
+path() {
+  echo "Qual é a pasta que debaixo da parte (Extract proprietary blobs)"
+read -rp "Escreva aqui" PASTA
+}
+
+ASK(){
+echo "Nos passos de fazer build,vai ta escrito em uma parte breakfast NOME DO SEU DISPOSITIVO"
+echo "Exemplo:rosemary"
+read -rp "Oq que tava la escrito: " CODENOME
+source build/envsetup.sh
+clear
+# Baixa especificacoes
+echo "Agora isso vai demorar,entao tire um soneca,toma cafe ou algo"
+sleep 3
+breakfast "$CODENOME"
+}
+ask_zip() {
+  echo "Por favor,baixe o seu .zip do instalador,porque precisa extrair coisas do .zip"
+echo "Escreva onde o .zip ta,exemplo:$HOME/Downloads/lineage.zip"
+read -rp "Escreva aqui:" ZIP 
+}
+
 CORES=$(( $(nproc) - 2 ))
 (( CORES < 1 )) && CORES=1
 
@@ -68,30 +90,17 @@ cd ~/android/lineage
 repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs --no-clone-bundle
 repo sync -c -j"$CORES"
 clear
-echo "Nos passos de fazer build,vai ta escrito em uma parte breakfast NOME DO SEU DISPOSITIVO"
-echo "Exemplo:rosemary"
-read -rp "Oq que tava la escrito: " CODENOME
-source build/envsetup.sh
-clear
-# Baixa especificacoes
-echo "Agora isso vai demorar,entao tire um soneca,toma cafe ou algo"
-sleep 3
-breakfast "$CODENOME"
-ask_zip() {
-  echo "Por favor,baixe o seu .zip do instalador,porque precisa extrair coisas do .zip"
-echo "Escreva onde o .zip ta,exemplo:$HOME/Downloads/lineage.zip"
-read -rp "Escreva aqui:" ZIP 
-}
+ASK
+if ! breakfast "$CODENOME"; then
+    echo "Erro:Voce errpu na hora que tava digitando ou nao e surportado meu bro"
+    ASK
+fi
 ask_zip
 
 while [[ ! -f "$ZIP" ]]; do 
 echo "Arquivo nao encontrado!"
 ask_zip
 done
-path() {
-  echo "Qual é a pasta que debaixo da parte (Extract proprietary blobs)"
-read -rp "Escreva aqui" PASTA
-}
 path
 while [[ ! -d "$PASTA" ]]; do
 echo "Pasta errada!"

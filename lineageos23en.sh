@@ -19,6 +19,28 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
+path() {
+  echo "What is written above Extract proparitery blobs"
+read -rp "Please,write here:" PASTA
+}
+
+ask_zip() {
+  echo "Please,Download the .zip installer"
+echo "Where the file is?"
+echo "Ex:/home/myuser/Lineage_something23.zip"
+read -rp "Write here:" ZIP 
+}
+
+ASK(){
+echo "On the compilation steps,there is one command called breakfast YourDevice,what is there"
+echo "Like rosymary,nx_tab"
+read -rp "What was written there?: " CODENOME
+source build/envsetup.sh
+clear
+echo "This will take a while,so take a nap,take a coffe or something"
+sleep 3
+breakfast "$CODENOME"
+}
 CORES=$(( $(nproc) - 2 ))
 (( CORES < 1 )) && CORES=1
 
@@ -70,31 +92,19 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs 
 repo sync -c -j"$CORES"
 clear
 # Downaload more things
-echo "On the compilation steps,there is one command called breakfast YourDevice,what is there"
-echo "Like rosymary,nx_tab"
-read -rp "What was written there?: " CODENOME
-source build/envsetup.sh
-clear
-echo "This will take a while,so take a nap,take a coffe or something"
-sleep 3
-breakfast "$CODENOME"
-ask_zip() {
-  echo "Please,Download the .zip installer"
-echo "Where the file is?"
-echo "Ex:/home/myuser/Lineage_something23.zip"
-read -rp "Write here:" ZIP 
-}
+ASK
+if ! breakfast "$CODENOME"; then
+    echo "Error: $CODENOME dont exist or is unsupported"
+    ASK
+fi
 ask_zip
 
 while [[ ! -f "$ZIP" ]]; do 
 echo "File not found"
 ask_zip
 done
-path() {
-  echo "What is written above Extract proparitery blobs"
-read -rp "Please,write here:" PASTA
-}
-funcao2
+
+path
 while [[ ! -d "$PASTA" ]]; do
 echo "Wrong path!!"
 path
