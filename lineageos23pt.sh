@@ -46,7 +46,6 @@ set -euo pipefail
 
 # Baixa pacotes
 sudo apt update -y 
-sudo apt upgrade -y 
 sudo apt install -y bc bison build-essential \
 ccache curl flex g++-multilib gcc-multilib git \
 git-lfs gnupg gperf imagemagick protobuf-compiler \
@@ -90,11 +89,10 @@ repo sync -c -j"$CORES"
 clear
 ASK
 if ! breakfast "$CODENOME"; then
-    echo "Erro:Voce errou na hora que tava digitando ou nao e surportado meu bro"
+    echo "Erro:Voce errou na hora que tava digitando ou nao e surportado,ou epe nao consiguiu baixar"
     ASK
-else
-    breakfast "$CODENOME"
 fi
+
 ask_zip
 
 while [[ ! -f "$ZIP" ]]; do 

@@ -47,7 +47,6 @@ set -euo pipefail
 
 # Installs packges
 sudo apt update -y 
-sudo apt upgrade -y 
 sudo apt install -y bc bison build-essential \
 ccache curl flex g++-multilib gcc-multilib git \
 git-lfs gnupg gperf imagemagick protobuf-compiler \
@@ -95,8 +94,6 @@ ASK
 if ! breakfast "$CODENOME"; then
     echo "Error: $CODENOME dont exist or is unsupported"
     ASK
-else
-    breakfast "$CODENOME"
 fi
 ask_zip
 
