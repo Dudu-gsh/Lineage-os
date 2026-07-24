@@ -68,7 +68,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 EOF
-# Bota pra usar ccache
+# Usar ccache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache 
 source ~/.profile
@@ -82,11 +82,12 @@ git lfs install
 git config --global trailer.changeid.key "Change-Id"
 ccache -M 30G
 ccache -o compression=true
-# Baixa ma8s coisa
+# Baixa coisas
 cd ~/android/lineage
 repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs --no-clone-bundle
 repo sync -c -j"$CORES"
 clear
+# Baixa mais coisas
 ASK
 if ! breakfast "$CODENOME"; then
     echo "Erro:Voce errou na hora que tava digitando ou nao e surportado,ou epe nao consiguiu baixar"
@@ -104,6 +105,7 @@ while [[ ! -d "$PASTA" ]]; do
 echo "Pasta errada!"
 path
 done
+# Extrai blobs do .zip
 cd "$PASTA"
 if [[ -f "./extract-files.sh" ]]; then
     ./extract-files.sh "$ZIP"
